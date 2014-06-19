@@ -6,11 +6,33 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <script type="text/javascript">
-    var app = angular.module('store',[]);
-    
+   ( 
+     var gem = {
+         name:'Dodecahedron',
+         price:2.95,
+         description:'Awesome Gem!'
+            
+     }      ;
+     var app = angular.module('store',[]);
+     app.controller('StoreController',function() {
+         this.product = gem;
+         
+     }
+             
+            );
+            
+            );
 </script>
 </head>
 <body>
-    <p> I am {{4 + 6}}
+    <p> I am {{4 + 6}} </p>
+    
+    <div ng-controller="StoreController as store">
+        
+      
+        <h1> ((store.product.name}} </h1>
+        <h2> ${{store.product.price}} </h2>
+        <p> {{store.product.description}} </p>
+</div>
 </body>
 </html>
