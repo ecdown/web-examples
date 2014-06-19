@@ -50,7 +50,8 @@ li img {
 	<div data-role="header">Imagize E Books</div> 
 		<input type="button" name="expand-all" value="Expand All" class="expand-all" data-theme="b" data-inline="true" />
 		<input type="button" name="collapse-all" value="Collapse All" class="collapse-all" data-theme="b" data-inline="true" />
-<?php
+                <input type="text" name="searchbox" />
+                <?php
 $books = ls("*", "_BOOKS", true);
 $dir = "";
 $div = "";
