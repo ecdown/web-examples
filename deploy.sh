@@ -1,1 +1,1 @@
-sudo cp index.html /var/www/web_examples
+sudo cp *.html /var/www/web_examples
