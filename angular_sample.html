@@ -10,17 +10,14 @@
      var gem = {
          name:'Dodecahedron',
          price:2.95,
-         description:'Awesome Gem!'
-            
-     }      ;
+         description:'Awesome Gem!'   
+     };
      var app = angular.module('store',[]);
-     app.controller('StoreController',function() {
-         this.product = gem;
+     app.controller('StoreController',function($scope) {
+         $scope.product = gem;
          alert("TEST");
-     }
-             
-            );
-      return;      
+     });
+          
     })();
 </script>
 </head>
@@ -30,9 +27,9 @@
     
         
       
-        <h1> {{StoreController.product.name}} </h1>
-        <h2> ${{StoreController.product.price}} </h2>
-        <p> {{StoreController.product.description}} </p>
+        <h1> {{product.name}} </h1>
+        <h2> ${{product.price}} </h2>
+        <p> {{product.description}} </p>
 </div>
 </body>
 </html>
