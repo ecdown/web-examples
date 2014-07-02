@@ -110,7 +110,7 @@ li img {
    clear:both;
    width:100%;
    padding-top:10px;
-   color:red;
+   color:#ffffff;
 }
 </style>
 </head>
