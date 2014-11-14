@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<title>Imagize E Books</title>
-		<link rel="stylesheet" href="js/jquery.mobile-1.0a3/jquery.mobile-1.0a3.css" />
+		<link rel="stylesheet" href="/iserver/books/js/jquery.mobile-1.0a3/jquery.mobile-1.0a3.css" />
 <style type="text/css">
     * {
     padding: 0;
@@ -45,14 +45,14 @@ li img {
 </style>
 </head>
 <body>
+                <input type="text" name="searchbox" />
 <div id="wrapper">
 <div data-role="page" class="page">
 	<div data-role="header">Imagize E Books</div> 
 		<input type="button" name="expand-all" value="Expand All" class="expand-all" data-theme="b" data-inline="true" />
 		<input type="button" name="collapse-all" value="Collapse All" class="collapse-all" data-theme="b" data-inline="true" />
-                <input type="text" name="searchbox" />
                 <?php
-$books = ls("*", "_BOOKS", true);
+$books = ls("*", "/var/www/iserver/books/_BOOKS", true);
 $dir = "";
 $div = "";
 //echo("<ul>");
@@ -64,7 +64,7 @@ foreach ($books as $book) {
 		//		echo('</ul></div>');
 	} 
 	$div = '<div class="directory" data-role="collapsible" data-collapsed="true" data-theme="e">';
-    echo("{$div}" . '<h3><img src="images/icons/37-suitcase.png"  />' . "{$book}</h3>" . '<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"  >');
+    echo("{$div}" . '<h3><img src="/var/www/iserver/books/images/icons/37-suitcase.png"  />' . "/var/www/iserver/books/{$book}</h3>" . '<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"  >');
 
   } else {
     //$new_book = preg_match("/([^\/]+)$/",$book);
@@ -153,8 +153,8 @@ function ls($pattern="*", $folder="", $recursivly=false, $options=array('return_
 		<input type="button" name="collapse-all" value="Collapse All" class="collapse-all" data-theme="b" data-inline="true" />
 
 	<div data-role="footer">Imagize E Books</div> 
-	<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.0a3/jquery.mobile-1.0a3.js" ></script>
+	<script type="text/javascript" src="/iserver/books/js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="/iserver/books/js/jquery.mobile-1.0a3/jquery.mobile-1.0a3.js" ></script>
 	<script type="text/javascript" >
 <?php if ($_SESSION['expand_all'] === true ) { ?>
   $(".directory").trigger("expand");
