@@ -31,235 +31,231 @@
     <text id="hours" class="numerals"  x="2" y="15"></text>
     <text id="tens" class="numerals" x="2" y="35"></text>
     <text id="ones" class="numerals" x="2" y="50"></text>
-
   </svg>
     
     <script>
-    setInterval(function() {
-        function r(el,deg) {
-         var el    
-         el.setAttribute('transform','rotate(' + deg + ' 50 50)');
-        }
-        function updatetime(elname1,elname2,elname3,hr,mins)
-        {  
-            
-            var chour = "";
-            var ctens = "";
-            var cones = "";
-            var tens = document.getElementById(elname1);
-            var ones = document.getElementById(elname2);
-            var hours = document.getElementById(elname3);
-            var nones = Math.floor(mins % 10);
-            var ntens = Math.floor((mins - nones) % 100);
-            
-            
-            switch(hr)
-            {
-                    case 1:
-                      chour = "one";
-                      break;
-                    case 2: 
-                      chour = "two";
-                       break;
-                    case 3: 
-                      chour = "three";
-                      break;
-                    case 4: 
-                      chour = "four";
-                      break;
-                    case 5: 
-                      chour = "five";
-                      break;
-                    case 6: 
-                      chour = "six";
-                      break;
-                    case 7: 
-                      chour = "seven";
-                      break;                    
-                    case 8: 
-                      chour = "eight";
-                      break;                    
-                    case 9: 
-                      chour = "nine";
-                      break;                    
-                    case 10: 
-                      chour = "ten";
-                      break;                    
-                    case 11: 
-                      chour = "eleven";
-                      break;         
-                    case 0:
-                      chour = "twelve";
-                      break;
-                    default:
-                       chour = "unknown";
-                    
-            }
-            
-            
-            switch(nones)
-            {
-                    case 1:
-                      cones = "one";
-                      break;
-                    case 2:
-                      cones = "two";
-                      break;
-                    case 3:
-                      cones = "three";
-                      break;
-                    case 4:
-                      cones = "four";
-                      break;
-                    case 5:
-                      cones = "five";
-                      break;
-                    case 6:
-                      cones = "six";
-                      break;
-                    case 7:
-                      cones = "seven";
-                      break;
-                    case 8:
-                      cones = "eight";
-                      break;
-                    case 9:
-                      cones = "nine";
-                      break;
-                    case 0:
-                      cones = "";           
-                      break;
-                    default:
-                       cones = "unknown";       
-            }
-           
-            switch(ntens)
-            {
-                    case 10:
-                        switch(nones)
-                        {
-                                case 0:
-                                  ctens = "ten";
-                                  cones = "";
-                                  break;
-                                case 1:
-                                  ctens = "eleven";
-                                  cones = "";
-                                  break;
-                                case 2:
-                                  ctens = "twelve";
-                                  cones = "";
-                                  break;
-                                case 3:
-                                  ctens = "thirteen";
-                                  cones = "";
-                                  break;
-                                case 4:
-                                  ctens = "fourteen";
-                                  cones = "";
-                                  break;
-                                case 5:
-                                  ctens = "fifteen";
-                                  cones = "";
-                                  break;
-                                case 6:
-                                  ctens = "sixteen";
-                                  cones = "";
-                                  break;
-                                case 7:
-                                  ctens = "seventeen";
-                                  cones = "";
-                                  break;
-                                case 8:
-                                  ctens = "eightteen";
-                                  cones = "";
-                                  break;
-                                case 9:
-                                  ctens = "nineteen";
-                                  cones = "";
-                                  break;
+  setInterval(function() {
+    function r(el,deg) {
+      var el    
+      el.setAttribute('transform','rotate(' + deg + ' 50 50)');
+  }
 
-                        }
-                        break;
-                    case 20:
-                        ctens = "twenty";
-                        break;
-                    case 30:
-                        ctens = "thirty";
-                        break;
-                    case 40:
-                        ctens = "forty";
-                        break;
-                    case 50:
-                        ctens = "fifty";
-                        break;
-                    case 0:
-                        ctens ="";
-                        switch(nones)
-                        {
-                                case 0:
-                                  cones = "o'clock";
-                                  break;
-                                case 1:
-                                  ctens = "after";
-                                  cones = chour;
-                                  break;
-                                case 2:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "two";
-                                  break;
-                                case 3:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "three";
-                                  break;
-                                case 4:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "four";
-                                  break;
-                                case 5:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "five";
-                                  break;
-                                case 6:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "six";
-                                  break;
-                                case 7:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "seven";
-                                  break;
-                                case 8:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "eight";
-                                  break;
-                                case 9:
-                                  ctens = "after";
-                                  cones = chour;
-                                  chour = "nine";
-                                  break;
+  function updatetime(elname1,elname2,elname3,hr,mins)
+  {  
+    var chour = "";
+    var ctens = "";
+    var cones = "";
+    var tens = document.getElementById(elname1);
+    var ones = document.getElementById(elname2);
+    var hours = document.getElementById(elname3);
+    var nones = Math.floor(mins % 10);
+    var ntens = Math.floor((mins - nones) % 100);
+            
+    switch(hr)
+    {
+      case 1:
+        chour = "one";
+        break;
+      case 2: 
+        chour = "two";
+        break;
+      case 3: 
+        chour = "three";
+        break;
+      case 4: 
+        chour = "four";
+        break;
+      case 5: 
+        chour = "five";
+        break;
+      case 6: 
+        chour = "six";
+        break;
+      case 7: 
+        chour = "seven";
+        break;                    
+      case 8: 
+        chour = "eight";
+        break;                    
+      case 9: 
+        chour = "nine";
+        break;                    
+      case 10: 
+        chour = "ten";
+        break;                    
+      case 11: 
+        chour = "eleven";
+        break;         
+      case 0:
+        chour = "twelve";
+        break;
+      default:
+        chour = "";
+    }
+            
+            
+    switch(nones)
+    {
+      case 1:
+        cones = "one";
+        break;
+      case 2:
+        cones = "two";
+        break;
+      case 3:
+        cones = "three";
+        break;
+      case 4:
+        cones = "four";
+        break;
+      case 5:
+        cones = "five";
+        break;
+      case 6:
+        cones = "six";
+        break;
+      case 7:
+        cones = "seven";
+        break;
+      case 8:
+        cones = "eight";
+        break;
+      case 9:
+        cones = "nine";
+        break;
+      case 0:
+        cones = "";           
+        break;
+      default:
+         cones = "";       
+    }
+          
+    switch(ntens)
+    {
+      case 10:
+          switch(nones)
+          {
+            case 0:
+              ctens = "ten";
+              cones = "";
+              break;
+            case 1:
+              ctens = "eleven";
+              cones = "";
+              break;
+            case 2:
+              ctens = "twelve";
+              cones = "";
+              break;
+            case 3:
+              ctens = "thirteen";
+              cones = "";
+              break;
+            case 4:
+              ctens = "fourteen";
+              cones = "";
+              break;
+            case 5:
+              ctens = "fifteen";
+              cones = "";
+              break;
+            case 6:
+              ctens = "sixteen";
+              cones = "";
+              break;
+            case 7:
+              ctens = "seventeen";
+              cones = "";
+              break;
+            case 8:
+              ctens = "eightteen";
+              cones = "";
+              break;
+            case 9:
+              ctens = "nineteen";
+              cones = "";
+              break;
 
-                        }
-                        break;
-                    default:
-                       ctens = "unknown";
-            }
-            console.log(ntens);
-            
-            ones.textContent = cones;
-            tens.textContent = ctens;
-            hours.textContent = chour;
-            
+          }
+        break;
+      case 20:
+        ctens = "twenty";
+        break;
+      case 30:
+        ctens = "thirty";
+        break;
+      case 40:
+        ctens = "forty";
+        break;
+      case 50:
+        ctens = "fifty";
+        break;
+      case 0:
+        ctens ="";
+        switch(nones)
+        {
+          case 0:
+            cones = "o'clock";
+            break;
+          case 1:
+            ctens = "after";
+            cones = chour;
+            break;
+          case 2:
+            ctens = "after";
+            cones = chour;
+            chour = "two";
+            break;
+          case 3:
+            ctens = "after";
+            cones = chour;
+            chour = "three";
+            break;
+          case 4:
+            ctens = "after";
+            cones = chour;
+            chour = "four";
+            break;
+          case 5:
+            ctens = "after";
+            cones = chour;
+            chour = "five";
+            break;
+          case 6:
+            ctens = "after";
+            cones = chour;
+            chour = "six";
+            break;
+          case 7:
+            ctens = "after";
+            cones = chour;
+            chour = "seven";
+            break;
+          case 8:
+            ctens = "after";
+            cones = chour;
+            chour = "eight";
+            break;
+          case 9:
+            ctens = "after";
+            cones = chour;
+            chour = "nine";
+            break;
+
         }
-        var d = new Date();
-        console.log(d.getHours() % 12);
-        updatetime("tens","ones","hours",d.getHours() % 12,d.getMinutes());
+        break;
+      default:
+        ctens = "";
+      }
+            
+      ones.textContent = cones;
+      tens.textContent = ctens;
+      hours.textContent = chour;
+            
+    }
+    var d = new Date();
+    console.log(d.getHours() % 12);
+    updatetime("tens","ones","hours",d.getHours() % 12,d.getMinutes());
     },1000);
     </script>
 </body>
