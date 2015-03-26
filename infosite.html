@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+$( "#navbar li" ).hover(function() {
+        $(this).find('.activebox').fadeToggle();
+});
+});
+</script>
+<style>
+  body {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    background: url('images/bg.jpg') no-repeat 50% 50% fixed;
+    background-size:cover;
+    margin: 0;
+  }
+  #navbar {
+    width: 100px;
+    height: 100%;
+    position:fixed;
+    background-color: #369;
+  }
+  #main {
+  padding-left:100px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 17px;
+  margin-top: 50px;
+}
+
+li {
+  position: relative;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  padding:10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: 10px 0;
+  transition: border 0.2s ease-in;
+}
+
+li:hover {
+  border: 2px solid #fe000a;
+  transition: border 0.2s ease-in;
+}
+.activebox {
+  position:absolute;
+  width: 300px;
+  top:0;
+  left: 70px;
+  padding: 10px;
+  background-color: #369;
+  color: #fff;
+  border-top-right-radius:30px;
+  border-bottom-right-radius:30px;
+}
+</style>
+</head>
+<body>
+  <div id="navbar">
+    <ul>
+      <li>
+         <a href="#"><img src="images/streetsign.png" alt="" />
+         <div class="activebox" style="display:none;" >
+           <h2>Directions</h2>
+           <p>Lorem ipsum.</p>
+         </div>
+      </li>
+      <li>
+         <a href="#"><img src="images/hotairballoon.png" alt="" />
+         <div class="activebox" style="display:none;" >
+           <h2>Sky High</h2>
+           <p>Lorem ipsum.</p>
+         </div>
+      </li>
+      <li>
+          <a href="#"><img src="images/paintbrush.png"  alt="" />
+         <div class="activebox" style="display:none;" >
+           <h2>Paint the Town</h2>
+           <p>Lorem ipsum.</p>
+      </li>
+      <li>
+          <a href="#"><img src="images/telescope.png" alt="" />
+         <div class="activebox" style="display:none;" >
+           <h2>See the Sights</h2>
+           <p>Lorem ipsum.</p>
+      </li>
+      <li>
+          <a href="#"><img src="images/wine.png" alt="" />
+         <div class="activebox" style="display:none;" >
+           <h2>Have a Drink</h2>
+           <p>Lorem ipsum.</p>
+      </li>
+    </ul>
+  </div>
+  <div id="main">
+    <h1>Do Something!</h1>
+  </div>
+</body>
+</html>
