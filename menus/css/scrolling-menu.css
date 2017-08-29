@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+    #block {
+    // Making this width large to handle multiple menu items added;
+    width: 5000px;
+    height: 100px;
+    transition: transform 0.7s cubic-bezier(0.36, 0.36, 0.59, 1);
+    position: absolute;
+    top:0px;
+    // bottom: 0px;
+    overflow: hidden;
+}
+
+.menu {
+    background: #17f;
+    // Update the width of the items here;
+    width: 496px;
+    height: 100px;
+    display: inline-block;
+    margin-left: 50px;
+}
+.menu:hover {
+    background: #333333;
+    height:100px;
+    opacity: 0.2;
+}
