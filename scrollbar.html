@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      Scrollbar exercise
+    </title>
+      <style>
+          #myProgress {
+              
+              background-color: grey;
+          }
+          #myBar {
+              width: 0%;
+              text-align: right;
+              color: white;
+              height: 30px;
+              background-color: green;
+          }
+      </style>
+  </head>
+  <body>
+          <div id="myProgress">
+            <div id="myBar" >0%</div>
+          </div>
+          <button id="myUpdate">Update Progress</button>
+    
+      <script>
+      function move() {
+         var pa = document.getElementById("myProgress");
+         var elem = document.getElementById("myBar")
+         var width = elem.offsetWidth;
+         var width_percent =Math.round(((elem.offsetWidth/pa.offsetWidth)*100).toFixed(2));
+          width_percent += 2;
+          if (width_percent > 100) {
+              width_percent = 100;
+          }
+          var width_percent_string = width_percent + "%";
+          elem.textContent = width_percent_string;
+          elem.style.width = width_percent_string;
+          
+      }
+      var scrollBtn1 = document.getElementById("myUpdate");
+      scrollBtn1.addEventListener("click",move);
+      </script>
+  </body>
+</html>
